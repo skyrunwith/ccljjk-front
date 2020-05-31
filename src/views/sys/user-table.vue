@@ -26,29 +26,45 @@
       style="width: 100%;"
       @sort-change="sortChange"
     >
-      <el-table-column label="ID" prop="id" sortable="custom" align="center" width="120" :class-name="getSortClass('id')">
+      <el-table-column
+        type="selection"
+        width="55">
+      </el-table-column>
+      <el-table-column label="ID" prop="id" sortable="custom" align="center" width="240" :class-name="getSortClass('id')">
         <template slot-scope="{row}">
           <span>{{ row.id }}</span>
          </template>
       </el-table-column>
-      <el-table-column label="登录名" prop="id" sortable="custom" align="center" width="120" :class-name="getSortClass('id')">
+      <el-table-column label="登录名" prop="id" align="center" width="180" vue-admin-template>
         <template slot-scope="{row}">
-          <span>{{ row.id }}</span>
+          <span>{{ row.username }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="所属机构" prop="id" sortable="custom" align="center" width="120" :class-name="getSortClass('id')">
+      <el-table-column label="昵称" prop="id" align="center" width="180" vue-admin-template>
         <template slot-scope="{row}">
-          <span>{{ row.id }}</span>
+          <span>{{ row.nickname }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="电话号码" prop="id" sortable="custom" align="center" width="120" :class-name="getSortClass('id')">
+      <el-table-column label="电话号码" prop="id" align="center" width="180" vue-admin-template>
         <template slot-scope="{row}">
-          <span>{{ row.id }}</span>
+          <span>{{ row.telephone }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="邮箱" prop="id" sortable="custom" align="center" width="120" :class-name="getSortClass('id')">
+      <el-table-column label="手机号码" prop="id"  align="center" width="180" vue-admin-template>
         <template slot-scope="{row}">
-          <span>{{ row.id }}</span>
+          <span>{{ row.cellphone }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="邮箱" prop="id"  align="center" min-width="180" vue-admin-template>
+        <template slot-scope="{row}">
+          <span>{{ row.email }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="操作" align="center" width="80" class-name="small-padding fixed-width">
+        <template slot-scope="{row,$index}">
+          <el-button type="el-button el-tooltip item el-button--text" size="mini">
+            <i class="el-icon-edit"></i>
+          </el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -57,7 +73,7 @@
 </template>
 
 <script>
-  import { fetchList, fetchPv, createArticle, updateArticle } from '@/api/article'
+  import { fetchList, fetchPv, createArticle, updateArticle } from '@/api/sys/user'
   import waves from '@/directive/waves' // waves directive
   import Pagination from '@/components/Pagination' // secondary package based on el-pagination
 
@@ -125,7 +141,7 @@
       getList() {
         this.listLoading = true
         fetchList(this.listQuery).then(response => {
-          this.list = JSON.parse("[{\"id\":1,\"timestamp\":96883119023,\"author\":\"Cynthia\",\"reviewer\":\"Brian\",\"title\":\"Snbsoscx Tqzi Kxxv Iqatgmji Clenixhwt Wypobchl Myk Rurbhpzgo Rbqtml\",\"content_short\":\"mock data\",\"content\":\"<p>I am testing data, I am testing data.</p><p><img src=\\\"https://wpimg.wallstcn.com/4c69009c-0fd4-4153-b112-6cb53d1cf943\\\"></p>\",\"forecast\":75.47,\"importance\":3,\"type\":\"JP\",\"status\":\"draft\",\"display_time\":\"1972-07-29 14:32:37\",\"comment_disabled\":true,\"pageviews\":1035,\"image_uri\":\"https://wpimg.wallstcn.com/e4558086-631c-425c-9430-56ffb46e70b3\",\"platforms\":[\"a-platform\"]},{\"id\":2,\"timestamp\":1190916570468,\"author\":\"George\",\"reviewer\":\"Shirley\",\"title\":\"Jgifs Efsdhv Dkpvw Oxffzs Tpkwh Wvqmgqefv Fevvd Phiuqjlm Lrjkb\",\"content_short\":\"mock data\",\"content\":\"<p>I am testing data, I am testing data.</p><p><img src=\\\"https://wpimg.wallstcn.com/4c69009c-0fd4-4153-b112-6cb53d1cf943\\\"></p>\",\"forecast\":70.77,\"importance\":2,\"type\":\"JP\",\"status\":\"published\",\"display_time\":\"1985-07-05 10:00:56\",\"comment_disabled\":true,\"pageviews\":3289,\"image_uri\":\"https://wpimg.wallstcn.com/e4558086-631c-425c-9430-56ffb46e70b3\",\"platforms\":[\"a-platform\"]}]")
+          this.list = response.data.items;
           this.total = response.data.total
 
           // Just to simulate the time of the request

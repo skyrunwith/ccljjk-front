@@ -196,18 +196,6 @@ export const constantRoutes = [
       }
     ]
   },
-  {
-    path: '/complete-table',
-    component: Layout,
-    children: [
-      {
-        path: 'complex-table',
-        component: () => import('@/views/table/complex-table'),
-        name: 'ComplexTable',
-        meta: { title: 'Complex Table' }
-      }
-    ]
-  },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
