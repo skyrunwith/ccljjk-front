@@ -255,6 +255,8 @@
           this.dialogPvVisible = true
         })
       },
+
+      
       formatJson(filterVal) {
         return this.list.map(v => filterVal.map(j => {
           if (j === 'timestamp') {
