@@ -6,7 +6,6 @@ import table from './table'
 import article  from './article'
 import user2 from './sys/user'
 import historyVideo from './recordmanage/history'
-
 const mocks = [
   ...user,
   ...table,
