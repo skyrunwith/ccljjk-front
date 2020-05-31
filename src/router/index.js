@@ -65,7 +65,7 @@ export const constantRoutes = [
       {
         path: 'car',
         name: '车辆管理',
-        component: () => import('@/views/basedata/car/index'),
+        component: () => import('@/views/basedata/car/car-table'),
         meta: { title: '车辆管理', icon: 'table' }
       },
       {
