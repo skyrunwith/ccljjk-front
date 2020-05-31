@@ -173,7 +173,7 @@ export const constantRoutes = [
       {
         path: 'user',
         name: '用户管理',
-        component: () => import('@/views/basedata/car/index'),
+        component: () => import('@/views/sys/user-table'),
         meta: { title: '用户管理', icon: 'table' }
       },
       {
@@ -196,7 +196,18 @@ export const constantRoutes = [
       }
     ]
   },
-
+  {
+    path: '/complete-table',
+    component: Layout,
+    children: [
+      {
+        path: 'complex-table',
+        component: () => import('@/views/table/complex-table'),
+        name: 'ComplexTable',
+        meta: { title: 'Complex Table' }
+      }
+    ]
+  },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
