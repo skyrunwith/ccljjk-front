@@ -4,11 +4,13 @@ import { param2Obj } from '../src/utils'
 import user from './user'
 import table from './table'
 import article  from './article'
+import user2 from './sys/user'
 
 const mocks = [
   ...user,
   ...table,
-  ...article
+  ...article,
+  ...user2
 ]
 
 // for front mock
