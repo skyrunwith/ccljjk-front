@@ -49,112 +49,150 @@ export const constantRoutes = [
     redirect: '/dashboard',
     children: [{
       path: 'dashboard',
-      name: 'Dashboard',
+      name: '监控总览',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '监测一张图', icon: 'dashboard' }
     }]
   },
 
   {
-    path: '/example',
+    path: '/basedata',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    redirect: '/basedata/car',
+    name: '基础数据管理',
+    meta: { title: '基础数据管理', icon: 'example' },
     children: [
+      {
+        path: 'car',
+        name: '车辆管理',
+        component: () => import('@/views/basedata/car/index'),
+        meta: { title: '车辆管理', icon: 'table' }
+      },
+      {
+        path: 'collectsite',
+        name: '收集站点管理',
+        component: () => import('@/views/basedata/collectsite/index'),
+        meta: { title: '收集站点管理', icon: 'tree' }
+      },
+      {
+        path: 'processsite',
+        name: '处理站点管理',
+        component: () => import('@/views/basedata/processsite/index'),
+        meta: { title: '处理站点管理', icon: 'table' }
+      }
+    ]
+  },
+
+  {
+    path: '/record',
+    component: Layout,
+    redirect: '/basedata/car',
+    name: '记录管理',
+    meta: { title: '记录管理', icon: 'example' },
+    children: [
+      {
+        path: 'loadingVideo',
+        name: '实时视频管理',
+        component: () => import('@/views/basedata/car/index'),
+        meta: { title: '实时视频管理', icon: 'table' }
+      },
+      {
+        path: 'historyVideo',
+        name: '历史视频管理',
+        component: () => import('@/views/basedata/collectsite/index'),
+        meta: { title: '历史视频管理', icon: 'tree' }
+      },
+      {
+        path: 'processsite',
+        name: '地磅记录管理',
+        component: () => import('@/views/basedata/processsite/index'),
+        meta: { title: '地磅记录管理', icon: 'table' }
+      },
       {
         path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        name: '商家收运记录管理',
+        component: () => import('@/views/basedata/car/index'),
+        meta: { title: '商家收运记录管理', icon: 'table' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
-  },
-
-  {
-    path: '/form',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
-      }
-    ]
-  },
-
-  {
-    path: '/nested',
-    component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
-    meta: {
-      title: 'Nested',
-      icon: 'nested'
-    },
-    children: [
-      {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
+        path: 'collectsite',
+        name: '收运车工作记录管理',
+        component: () => import('@/views/basedata/collectsite/index'),
+        meta: { title: '收运车工作记录管理', icon: 'tree' }
       },
       {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        meta: { title: 'menu2' }
+        path: 'processsite',
+        name: '考勤记录管理',
+        component: () => import('@/views/basedata/processsite/index'),
+        meta: { title: '考勤记录管理', icon: 'table' }
       }
     ]
   },
 
   {
-    path: 'external-link',
+    path: '/report',
     component: Layout,
+    redirect: '/report',
+    name: '报表管理',
+    meta: { title: '报表管理', icon: 'example' },
     children: [
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        path: 'car',
+        name: '餐厨收运统计报表',
+        component: () => import('@/views/basedata/car/index'),
+        meta: { title: '餐厨收运统计报表', icon: 'table' }
+      },
+      {
+        path: 'collectsite',
+        name: '商家收运报表',
+        component: () => import('@/views/basedata/collectsite/index'),
+        meta: { title: '商家收运报表', icon: 'tree' }
+      },
+      {
+        path: 'processsite',
+        name: '收运车运行报表',
+        component: () => import('@/views/basedata/processsite/index'),
+        meta: { title: '收运车运行报表', icon: 'table' }
+      },
+      {
+        path: 'processsite',
+        name: '人员工作报表',
+        component: () => import('@/views/basedata/processsite/index'),
+        meta: { title: '人员工作报表', icon: 'table' }
+      }
+    ]
+  },
+  
+  {
+    path: '/system',
+    component: Layout,
+    redirect: '/system',
+    name: '系统管理',
+    meta: { title: '系统管理', icon: 'example' },
+    children: [
+      {
+        path: 'user',
+        name: '用户管理',
+        component: () => import('@/views/basedata/car/index'),
+        meta: { title: '用户管理', icon: 'table' }
+      },
+      {
+        path: 'role',
+        name: '角色管理',
+        component: () => import('@/views/basedata/collectsite/index'),
+        meta: { title: '角色管理', icon: 'tree' }
+      },
+      {
+        path: 'config',
+        name: '系统配置',
+        component: () => import('@/views/basedata/processsite/index'),
+        meta: { title: '系统配置', icon: 'table' }
+      },
+      {
+        path: 'about',
+        name: '关于我们',
+        component: () => import('@/views/basedata/processsite/index'),
+        meta: { title: '关于我们', icon: 'table' }
       }
     ]
   },
