@@ -26,6 +26,10 @@
       style="width: 100%;"
       @sort-change="sortChange"
     >
+      <el-table-column
+        type="selection"
+        width="55">
+      </el-table-column>
       <el-table-column label="ID" prop="id" sortable="custom" align="center" width="240" :class-name="getSortClass('id')">
         <template slot-scope="{row}">
           <span>{{ row.id }}</span>
