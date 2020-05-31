@@ -26,19 +26,45 @@
       style="width: 100%;"
       @sort-change="sortChange"
     >
+    <el-table-column
+      type="selection"
+      width="55">
+    </el-table-column>
       <el-table-column label="ID" prop="id" sortable="custom" align="center" width="80" :class-name="getSortClass('id')">
         <template slot-scope="{row}">
           <span>{{ row.id }}</span>
          </template>
       </el-table-column>
-      <el-table-column label="ID" prop="id" sortable="custom" align="center" width="80" :class-name="getSortClass('id')">
+      <el-table-column label="车辆编号" prop="id" align="center" width="180" vue-admin-template>
         <template slot-scope="{row}">
-          <span>{{ row.id }}</span>
+          <span>{{ row.carNum }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="ID" prop="id" sortable="custom" align="center" width="80" :class-name="getSortClass('id')">
+      <el-table-column label="驾驶员名称" prop="id" align="center" width="180" vue-admin-template>
         <template slot-scope="{row}">
-          <span>{{ row.id }}</span>
+          <span>{{ row.driverName }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="驾驶时间" prop="id" align="center" width="180" vue-admin-template>
+        <template slot-scope="{row}">
+          <span>{{ row.driveTime }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="收转地址" prop="id"  align="center" width="180" vue-admin-template>
+        <template slot-scope="{row}">
+          <span>{{ row.address }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="商家" prop="id"  align="center" min-width="180" vue-admin-template>
+        <template slot-scope="{row}">
+          <span>{{ row.merchants }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="操作" align="center" width="80" class-name="small-padding fixed-width">
+        <template slot-scope="{row,$index}">
+          <el-button type="el-button el-tooltip item el-button--text" size="mini">
+            <i class="el-icon-edit"></i>
+          </el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -47,7 +73,7 @@
 </template>
 
 <script>
-  import { fetchList, fetchPv, createArticle, updateArticle } from '@/api/article'
+  import { fetchList, fetchPv, createArticle, updateArticle } from '@/api/recordmanage/historyVideo'
   import waves from '@/directive/waves' // waves directive
   import Pagination from '@/components/Pagination' // secondary package based on el-pagination
 
@@ -115,7 +141,7 @@
       getList() {
         this.listLoading = true
         fetchList(this.listQuery).then(response => {
-          this.list = response.data.items
+          this.list = response.data.items;
           this.total = response.data.total
 
           // Just to simulate the time of the request

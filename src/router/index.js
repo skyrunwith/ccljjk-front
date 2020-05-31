@@ -84,46 +84,46 @@ export const constantRoutes = [
   },
 
   {
-    path: '/record',
+    path: '/recordmanage',
     component: Layout,
-    redirect: '/basedata/car',
+    redirect: '/recordmanage/realTimeVideo',
     name: '记录管理',
     meta: { title: '记录管理', icon: 'example' },
     children: [
       {
-        path: 'loadingVideo',
+        path: 'realTimeVideo',
         name: '实时视频管理',
-        component: () => import('@/views/basedata/car/index'),
+        component: () => import('@/views/recordmanage/realTimeVideo/loadingVideo'),
         meta: { title: '实时视频管理', icon: 'table' }
       },
       {
         path: 'historyVideo',
         name: '历史视频管理',
-        component: () => import('@/views/basedata/collectsite/index'),
-        meta: { title: '历史视频管理', icon: 'tree' }
+        component: () => import('@/views/recordmanage/historyVideo/historyVideo'),
+        meta: { title: '历史视频管理', icon: 'table' }
       },
       {
-        path: 'processsite',
+        path: 'loadometerRecord',
         name: '地磅记录管理',
-        component: () => import('@/views/basedata/processsite/index'),
+        component: () => import('@/views/recordmanage/loadometerRecord/loadometerRecord'),
         meta: { title: '地磅记录管理', icon: 'table' }
       },
       {
-        path: 'table',
+        path: 'merchantsCollectsiteRecord',
         name: '商家收运记录管理',
-        component: () => import('@/views/basedata/car/index'),
+        component: () => import('@/views/recordmanage/merchantsCollectsiteRecord/collectsiteRecord'),
         meta: { title: '商家收运记录管理', icon: 'table' }
       },
       {
-        path: 'collectsite',
+        path: 'carCollectsiteRecord',
         name: '收运车工作记录管理',
-        component: () => import('@/views/basedata/collectsite/index'),
-        meta: { title: '收运车工作记录管理', icon: 'tree' }
+        component: () => import('@/views/recordmanage/carCollectsiteRecord/collectsiteRecord'),
+        meta: { title: '收运车工作记录管理', icon: 'table' }
       },
       {
-        path: 'processsite',
+        path: 'attendanceRecord',
         name: '考勤记录管理',
-        component: () => import('@/views/basedata/processsite/index'),
+        component: () => import('@/views/recordmanage/attendanceRecord/attendance'),
         meta: { title: '考勤记录管理', icon: 'table' }
       }
     ]
@@ -193,18 +193,6 @@ export const constantRoutes = [
         name: '关于我们',
         component: () => import('@/views/basedata/processsite/index'),
         meta: { title: '关于我们', icon: 'table' }
-      }
-    ]
-  },
-  {
-    path: '/complete-table',
-    component: Layout,
-    children: [
-      {
-        path: 'complex-table',
-        component: () => import('@/views/table/complex-table'),
-        name: 'ComplexTable',
-        meta: { title: 'Complex Table' }
       }
     ]
   },
