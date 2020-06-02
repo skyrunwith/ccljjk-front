@@ -42,17 +42,18 @@ export const constantRoutes = [
     component: () => import('@/views/404'),
     hidden: true
   },
-
   {
     path: '/',
     component: Layout,
     redirect: '/dashboard',
-    children: [{
-      path: 'dashboard',
-      name: '监控总览',
-      component: () => import('@/views/dashboard/index'),
-      meta: { title: '监测一张图', icon: 'dashboard' }
-    }]
+    children: [
+      {
+        path: 'dashboard',
+        component: () => import('@/views/dashboard/index'),
+        name: 'dashboard',
+        meta: {title: '监控一张图', icon: 'dashboard', affix: true}
+      }
+    ]
   },
 
   {
@@ -60,25 +61,25 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/basedata/car',
     name: '基础数据管理',
-    meta: { title: '基础数据管理', icon: 'example' },
+    meta: {title: '基础数据管理', icon: 'example'},
     children: [
       {
         path: 'car',
         name: '车辆管理',
         component: () => import('@/views/basedata/car/car-table'),
-        meta: { title: '车辆管理', icon: 'table' }
+        meta: {title: '车辆管理', icon: 'table'}
       },
       {
         path: 'collectsite',
         name: '收集站点管理',
         component: () => import('@/views/basedata/collectsite/index'),
-        meta: { title: '收集站点管理', icon: 'tree' }
+        meta: {title: '收集站点管理', icon: 'tree'}
       },
       {
-        path: 'processsite',
+        path: 'processsite1',
         name: '处理站点管理',
         component: () => import('@/views/basedata/processsite/index'),
-        meta: { title: '处理站点管理', icon: 'table' }
+        meta: {title: '处理站点管理', icon: 'table'}
       }
     ]
   },
@@ -88,43 +89,43 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/recordmanage/realTimeVideo',
     name: '记录管理',
-    meta: { title: '记录管理', icon: 'example' },
+    meta: {title: '记录管理', icon: 'example'},
     children: [
       {
         path: 'realTimeVideo',
         name: '实时视频管理',
         component: () => import('@/views/recordmanage/realTimeVideo/loadingVideo'),
-        meta: { title: '实时视频管理', icon: 'table' }
+        meta: {title: '实时视频管理', icon: 'table'}
       },
       {
         path: 'historyVideo',
         name: '历史视频管理',
         component: () => import('@/views/recordmanage/historyVideo/historyVideo'),
-        meta: { title: '历史视频管理', icon: 'table' }
+        meta: {title: '历史视频管理', icon: 'table'}
       },
       {
         path: 'loadometerRecord',
         name: '地磅记录管理',
         component: () => import('@/views/recordmanage/loadometerRecord/loadometerRecord'),
-        meta: { title: '地磅记录管理', icon: 'table' }
+        meta: {title: '地磅记录管理', icon: 'table'}
       },
       {
         path: 'merchantsCollectsiteRecord',
         name: '商家收运记录管理',
         component: () => import('@/views/recordmanage/merchantsCollectsiteRecord/collectsiteRecord'),
-        meta: { title: '商家收运记录管理', icon: 'table' }
+        meta: {title: '商家收运记录管理', icon: 'table'}
       },
       {
         path: 'carCollectsiteRecord',
         name: '收运车工作记录管理',
         component: () => import('@/views/recordmanage/carCollectsiteRecord/collectsiteRecord'),
-        meta: { title: '收运车工作记录管理', icon: 'table' }
+        meta: {title: '收运车工作记录管理', icon: 'table'}
       },
       {
         path: 'attendanceRecord',
         name: '考勤记录管理',
         component: () => import('@/views/recordmanage/attendanceRecord/attendance'),
-        meta: { title: '考勤记录管理', icon: 'table' }
+        meta: {title: '考勤记录管理', icon: 'table'}
       }
     ]
   },
@@ -134,75 +135,75 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/report',
     name: '报表管理',
-    meta: { title: '报表管理', icon: 'example' },
+    meta: {title: '报表管理', icon: 'example'},
     children: [
       {
         path: 'car',
         name: '餐厨收运统计报表',
         component: () => import('@/views/basedata/car/index'),
-        meta: { title: '餐厨收运统计报表', icon: 'table' }
+        meta: {title: '餐厨收运统计报表', icon: 'table'}
       },
       {
         path: 'collectsite',
         name: '商家收运报表',
         component: () => import('@/views/basedata/collectsite/index'),
-        meta: { title: '商家收运报表', icon: 'tree' }
+        meta: {title: '商家收运报表', icon: 'tree'}
       },
       {
-        path: 'processsite',
+        path: 'processsite2',
         name: '收运车运行报表',
         component: () => import('@/views/basedata/processsite/index'),
-        meta: { title: '收运车运行报表', icon: 'table' }
+        meta: {title: '收运车运行报表', icon: 'table'}
       },
       {
-        path: 'processsite',
+        path: 'processsite3',
         name: '人员工作报表',
         component: () => import('@/views/basedata/processsite/index'),
-        meta: { title: '人员工作报表', icon: 'table' }
+        meta: {title: '人员工作报表', icon: 'table'}
       }
     ]
   },
-  
+
   {
     path: '/system',
     component: Layout,
     redirect: '/system',
     name: '系统管理',
-    meta: { title: '系统管理', icon: 'example' },
+    meta: {title: '系统管理', icon: 'example'},
     children: [
       {
         path: 'user',
         name: '用户管理',
         component: () => import('@/views/sys/user-table'),
-        meta: { title: '用户管理', icon: 'table' }
+        meta: {title: '用户管理', icon: 'table'}
       },
       {
         path: 'role',
         name: '角色管理',
         component: () => import('@/views/basedata/collectsite/index'),
-        meta: { title: '角色管理', icon: 'tree' }
+        meta: {title: '角色管理', icon: 'tree'}
       },
       {
         path: 'config',
         name: '系统配置',
         component: () => import('@/views/basedata/processsite/index'),
-        meta: { title: '系统配置', icon: 'table' }
+        meta: {title: '系统配置', icon: 'table'}
       },
       {
         path: 'about',
         name: '关于我们',
         component: () => import('@/views/basedata/processsite/index'),
-        meta: { title: '关于我们', icon: 'table' }
+        meta: {title: '关于我们', icon: 'table'}
       }
     ]
   },
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }
+  {path: '*', redirect: '/404', hidden: true}
 ]
 
 const createRouter = () => new Router({
   // mode: 'history', // require service support
-  scrollBehavior: () => ({ y: 0 }),
+  scrollBehavior: () => ({y: 0}),
   routes: constantRoutes
 })
 
