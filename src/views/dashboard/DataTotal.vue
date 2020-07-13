@@ -10,13 +10,13 @@
         <div class="charts-item">
           <div class="title-img-box">
             <div data-v-79602b79="" class="title-img">
-              &nbsp;&nbsp;
-              崇州市空气质量实时数据
+              &nbsp;
+              马尔康空气质量实时数据
               <span data-v-79602b79="" class="words">Live</span></div>
           </div>
           <div id="cycle2" class="qa-box" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-            <div style="width: 450px; height: 300px;">
-
+            <div style="width: 380px; height: 300px;">
+              <img src="../../images/weather.png"/>
             </div>
             <div data-v-79602b79="" class="cell-diulei"><div data-v-79602b79="" class="label-item"><span data-v-79602b79="" style="font-family: CUSTOM; color: rgb(0, 120, 232);">PM25: </span> <span data-v-79602b79="" style="font-size: 12px;"><span data-v-79602b79="" style="font-size: 14px; color: rgb(1, 255, 1);">17.82</span></span></div><div data-v-79602b79="" class="label-item"><span data-v-79602b79="" style="font-family: CUSTOM; color: rgb(0, 120, 232);">PM10: </span> <span data-v-79602b79="" style="font-size: 12px;"><span data-v-79602b79="" style="font-size: 14px; color: rgb(1, 255, 1);">38.88</span></span></div><div data-v-79602b79="" class="label-item"><span data-v-79602b79="" style="font-family: CUSTOM; color: rgb(0, 120, 232);">SO2: </span> <span data-v-79602b79="" style="font-size: 12px;"><span data-v-79602b79="" style="font-size: 14px; color: rgb(1, 255, 1);">4.40</span></span></div><div data-v-79602b79="" class="label-item"><span data-v-79602b79="" style="font-family: CUSTOM; color: rgb(0, 120, 232);">NO2: </span> <span data-v-79602b79="" style="font-size: 12px;"><span data-v-79602b79="" style="font-size: 14px; color: rgb(1, 255, 1);">14.61</span></span></div><div data-v-79602b79="" class="label-item"><span data-v-79602b79="" style="font-family: CUSTOM; color: rgb(0, 120, 232);">CO: </span> <span data-v-79602b79="" style="font-size: 12px;"><span data-v-79602b79="" style="font-size: 14px; color: rgb(1, 255, 1);">0.59</span></span></div><div data-v-79602b79="" class="label-item"><span data-v-79602b79="" style="font-family: CUSTOM; color: rgb(0, 120, 232);">O3: </span> <span data-v-79602b79="" style="font-size: 12px;"><span data-v-79602b79="" style="font-size: 14px; color: rgb(1, 255, 1);">102.49</span></span></div></div>
           </div>
@@ -128,6 +128,7 @@ export default {
     -ms-flex-pack: center;
     justify-content: center;
     height: 26px;
+    color:white;
   }
   .home-charts .charts-box .charts-item .qa-box {
     width: 100%;
