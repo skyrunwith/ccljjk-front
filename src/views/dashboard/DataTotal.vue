@@ -1,7 +1,26 @@
 <template >
   <div class="el-container home-charts">
     <div class="left-charts-container charts-box">
+      <div class="long-charts">
+        <div class="splite-cell">
+          <div class="point"></div>
+          <div class="point"></div>
+        </div>
 
+        <div class="charts-item">
+          <div class="title-img-box">
+            <div data-v-79602b79="" class="title-img">
+              &nbsp;&nbsp;
+              崇州市空气质量实时数据
+              <span data-v-79602b79="" class="words">Live</span></div>
+          </div>
+        </div>
+        <div class="splite-cell">
+          <div class="point"></div>
+          <div class="point"></div>
+        </div>
+      </div>
+      <div class="long-charts"></div>
     </div>
   </div>
 </template>
@@ -36,5 +55,72 @@ export default {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+  }
+  .home-charts .charts-box .long-charts, .home-charts .charts-box .short-charts {
+    width: 95%;
+    margin: 10px 0;
+    border-left: 2px solid #425762;
+    border-right: 2px solid #425762;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .home-charts .charts-box .long-charts {
+    height: 64%;
+  }
+  .home-charts .splite-cell {
+    width: 100%;
+    height: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .home-charts .charts-box .charts-item {
+    width: calc(100% - 4px);
+    height: calc(100% - 8px);
+  }
+  .home-charts .charts-box .charts-item, .home-charts .charts-box .foot-charts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .home-charts .charts-box .charts-item .title-img-box {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 26px;
   }
 </style>
