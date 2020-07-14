@@ -46,6 +46,7 @@ export const constantRoutes = [
     path: '/',
     component: Layout,
     redirect: '/dataTotal',
+    hidden: true, // 不在侧边栏线上
     children: [
       {
         path: 'dashboard',
@@ -75,6 +76,7 @@ export const constantRoutes = [
     redirect: '/basedata/car',
     name: '基础数据管理',
     meta: { title: '基础数据管理', icon: 'example' },
+    hidden: true, // 不在侧边栏线上
     children: [
       {
         path: 'car',
@@ -103,6 +105,7 @@ export const constantRoutes = [
     redirect: '/recordmanage/realTimeVideo',
     name: '记录管理',
     meta: { title: '记录管理', icon: 'example' },
+    hidden: true, // 不在侧边栏线上
     children: [
       {
         path: 'realTimeVideo',
@@ -149,6 +152,7 @@ export const constantRoutes = [
     redirect: '/report',
     name: '报表管理',
     meta: { title: '报表管理', icon: 'example' },
+    hidden: true, // 不在侧边栏线上
     children: [
       {
         path: 'car',
@@ -183,6 +187,7 @@ export const constantRoutes = [
     redirect: '/system',
     name: '系统管理',
     meta: { title: '系统管理', icon: 'example' },
+    hidden: true, // 不在侧边栏线上
     children: [
       {
         path: 'user',
