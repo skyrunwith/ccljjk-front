@@ -95,12 +95,19 @@
       </div>
 
     </div>
+    <div class="cesium">
+      <render-map></render-map>
+    </div>
   </div>
 </template>
 
 <script>
+import RenderMap from '@/views/dashboard/render-map'
 export default {
-  name: 'DataTotal'
+  name: 'DataTotal',
+  components: {
+    RenderMap
+  }
 }
 </script>
 
@@ -335,5 +342,12 @@ export default {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+  }
+  .home-charts .cesium {
+    width: 44vw;
+    left: 29.4vw;
+    height: calc(100% - 420px);
+    position: fixed;
+    top: 60px;
   }
 </style>

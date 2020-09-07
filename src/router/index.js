@@ -71,7 +71,7 @@ export const constantRoutes = [
   },
   {
     path: '/map',
-    component: () => import('@/views/dashboard/map'),
+    component: () => import('@/views/dashboard/render-map'),
     meta: { title: '题图', icon: 'dashboard', affix: true }
   },
   {
