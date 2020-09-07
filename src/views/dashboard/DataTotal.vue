@@ -28,6 +28,73 @@
       </div>
       <div class="long-charts"></div>
     </div>
+    <div class="right-charts-container charts-box">
+      <div class="short-charts2">
+        <div class="splite-cell">
+          <div class="point"></div>
+          <div class="point"></div>
+        </div>
+        <div class="charts-item">
+          <div class="title-img-box">
+            <div data-v-79602b79="" class="title-img">
+              &nbsp;
+              待处理消息
+            </div>
+          </div>
+          <div style="color: white">
+            待处理消息内容
+          </div>
+        </div>
+        <div class="splite-cell">
+          <div class="point"></div>
+          <div class="point"></div>
+        </div>
+      </div>
+      <div class="short-charts2">
+        <div class="splite-cell">
+          <div class="point"></div>
+          <div class="point"></div>
+        </div>
+        <div class="charts-item">
+          <div class="title-img-box">
+            <div data-v-79602b79="" class="title-img">
+              &nbsp;
+              餐厅收运概览
+            </div>
+          </div>
+          <div style="color: white">
+            内容
+          </div>
+        </div>
+        <div class="splite-cell">
+          <div class="point"></div>
+          <div class="point"></div>
+        </div>
+      </div>
+      <div class="short-charts2"></div>
+    </div>
+    <div class="foot-charts-container charts-box">
+      <div class="foot-charts">
+        <div class="splite-cell"></div>
+        <div class="charts-item">
+          <div class="title-img-box">
+            <div data-v-79602b79="" class="title-img">
+              &nbsp;&nbsp;
+              30天内餐厨收运总量日统计
+              <span data-v-79602b79="" class="words">Statistics</span></div>
+          </div>
+          <div id="qabox" class="qa-box" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;">
+            <div style="position: relative; overflow: hidden; width: 760px; height: 211px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
+              <div style="width: 380px; height: 300px;">
+                <img src="../../images/statistics.png"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="splite-cell"></div>
+      </div>
+
+    </div>
   </div>
 </template>
 
@@ -179,5 +246,94 @@ export default {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+  }
+  .home-charts .charts-box .charts-item .title-img-box .title-img {
+    line-height: 26px;
+    height: 100%;
+    width: 90%;
+    background-color: #1a2e36;
+    color: #fff;
+    font-size: 15px;
+    font-family: CUSTOM;
+  }
+  .home-charts .splite-cell .point {
+    margin: 0 5px;
+    width: 4px;
+    height: 4px;
+    background: #8e8f93;
+  }
+/* footer css */
+  .home-charts .charts-box {
+    background: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .home-charts .foot-charts-container {
+    width: 44vw;
+    height: 300px;
+    position: fixed;
+    bottom: 40px;
+    left: 29.4vw;
+  }
+  .home-charts .charts-box .charts-item, .home-charts .charts-box .foot-charts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .home-charts .charts-box .foot-charts {
+    margin: 10px 0;
+    width: 100%;
+    height: 100%;
+    border-left: 2px solid #425762;
+    border-right: 2px solid #425762;
+  }
+
+  .home-charts .right-charts-container {
+    width: 26vw;
+    height: calc(100% - 63px);
+    position: fixed;
+    top: 50px;
+    right: 0;
+  }
+
+  .home-charts .charts-box .mini-charts, .home-charts .charts-box .short-charts2 {
+    width: 95%;
+    margin: 10px 0;
+    border-left: 2px solid #425762;
+    border-right: 2px solid #425762;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
 </style>
