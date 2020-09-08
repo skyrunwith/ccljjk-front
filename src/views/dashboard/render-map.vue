@@ -4,6 +4,7 @@
 
 <script>
 import MapLoader from '@/utils/load-map'
+import lajizhanIcon from '@/images/laji.png'
 export default {
   name: 'RenderMap',
   data: function() {
@@ -24,6 +25,7 @@ export default {
         var styleName = 'amap://styles/darkblue'
         self.map.setMapStyle(styleName)
         this.init()
+        this.initMark()
       })
       .catch(e => {
         console.log(e)
@@ -66,6 +68,29 @@ export default {
         self.map.add(polygons)
         self.map.setFitView(polygons)// 视口自适应
       })
+    },
+    initMark() {
+      const self = this
+      const lnglats = [
+        [102.208501, 31.905558],
+        [102.22585, 31.879612],
+        [102.236149, 31.865034],
+        [102.254689, 31.905263],
+        [102.244732, 31.874364],
+        [102.254689, 31.908178],
+        [102.130063,31.914881],
+        [102.183278,31.955671]
+      ]
+      for (let i = 0; i < lnglats.length; i++) {
+        const marker = new this.AMap.Marker({
+          // eslint-disable-next-line new-cap
+          position: new this.AMap.LngLat(lnglats[i][0], lnglats[i][1]),
+          offest: new this.AMap.Pixel(-10, -10),
+          icon: lajizhanIcon,
+          title: '马尔康'
+        })
+        this.map.add(marker)
+      }
     }
   }
 }
