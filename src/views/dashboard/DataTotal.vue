@@ -42,7 +42,7 @@
             </div>
           </div>
           <div style="color: white">
-            待处理消息内容
+            <render-notify></render-notify>
           </div>
         </div>
         <div class="splite-cell">
@@ -62,8 +62,8 @@
               餐厅收运概览
             </div>
           </div>
-          <div style="color: white">
-            内容
+          <div style="color: white" class="warn-box">
+            <render-dining-statistics></render-dining-statistics>
           </div>
         </div>
         <div class="splite-cell">
@@ -71,7 +71,6 @@
           <div class="point"></div>
         </div>
       </div>
-      <div class="short-charts2"></div>
     </div>
     <div class="foot-charts-container charts-box">
       <div class="foot-charts">
@@ -85,8 +84,11 @@
           </div>
           <div id="qabox" class="qa-box" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;">
             <div style="position: relative; overflow: hidden; width: 760px; height: 211px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
-              <div style="width: 380px; height: 300px;">
-                <img src="../../images/statistics.png"/>
+              <!--<div style="width: 380px; height: 300px;">
+                <render-day-statistics></render-day-statistics>
+              </div>-->
+              <div style="width: 100%; height: 100%;">
+                <render-day-statistics></render-day-statistics>
               </div>
             </div>
           </div>
@@ -103,10 +105,17 @@
 
 <script>
 import RenderMap from '@/views/dashboard/render-map'
+import RenderDiningStatistics from '@/views/dashboard/render-diningStatistics'
+import RenderDayStatistics from '@/views/dashboard/render-dayStatistics'
+import RenderNotify from '@/views/dashboard/render-notify'
+
 export default {
   name: 'DataTotal',
   components: {
-    RenderMap
+    RenderMap,
+    RenderDiningStatistics,
+    RenderDayStatistics,
+    RenderNotify
   }
 }
 </script>
@@ -326,7 +335,8 @@ export default {
 
   .home-charts .charts-box .mini-charts, .home-charts .charts-box .short-charts2 {
     width: 95%;
-    margin: 10px 0;
+    height: 48%;
+    margin: 10px 0px 36px 0px;
     border-left: 2px solid #425762;
     border-right: 2px solid #425762;
     display: -webkit-box;
@@ -349,5 +359,13 @@ export default {
     height: calc(100% - 420px);
     position: fixed;
     top: 60px;
+  }
+
+  .warn-box {
+    width: 100%;
+    height: calc(100% - 40px);
+    max-height: calc(100% - 40px);
+    position: relative;
+    padding: 0 10px;
   }
 </style>
