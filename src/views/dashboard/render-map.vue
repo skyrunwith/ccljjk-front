@@ -4,6 +4,7 @@
 
 <script>
 import MapLoader from '@/utils/load-map'
+import lajizhanIcon from '@/images/laji.png'
 export default {
   name: 'RenderMap',
   data: function() {
@@ -18,12 +19,13 @@ export default {
       .then(AMap => {
         self.AMap = AMap
         self.map = new AMap.Map('mymap', {
-          center: [116.397428, 39.90923], // 地图中心点
-          zoom: 11 // 地图显示的缩放级别
+          center: [102.206339, 31.906765], // 地图中心点
+          zoom: 15 // 地图显示的缩放级别
         })
         var styleName = 'amap://styles/darkblue'
         self.map.setMapStyle(styleName)
         this.init()
+        this.initMark()
       })
       .catch(e => {
         console.log(e)
@@ -57,15 +59,55 @@ export default {
               strokeWeight: 1,
               path: bounds[i],
               fillOpacity: 0.4,
-              fillColor: '#80d8ff',
+              fillColor: '#black',
               strokeColor: '#0091ea'
             })
             polygons.push(polygon)
           }
         }
         self.map.add(polygons)
-        self.map.setFitView(polygons)// 视口自适应
+        // self.map.setFitView(polygons)// 视口自适应
       })
+    },
+    initMark() {
+      const lnglats = [
+        [102.208501, 31.905558],
+        [102.22585, 31.879612],
+        [102.236149, 31.865034],
+        [102.254689, 31.905263],
+        [102.244732, 31.874364],
+        [102.254689, 31.908178],
+        [102.130063, 31.914881],
+        [102.183278, 31.955671],
+        [102.175572, 31.875797],
+        [102.189648, 31.841971],
+        [102.147934, 31.889061],
+        [102.159092, 31.914128]
+      ]
+      let ne = this.map.getBounds().northEast
+      let sw = this.map.getBounds().southWest
+      var lngSpan = Math.abs(sw.lng - ne.lng);
+      var latSpan = Math.abs(ne.lat - sw.lat);
+      for (var i = 0; i < 25; i ++) {
+        // var point = new BMap.Point(sw.lng + lngSpan * (Math.random() * 0.7), ne.lat - latSpan * (Math.random() * 0.7));
+          const marker = new this.AMap.Marker({
+            // eslint-disable-next-line new-cap
+            position: new this.AMap.LngLat(sw.lng + lngSpan * (Math.random() * 0.7), ne.lat - latSpan * (Math.random() * 0.7)),
+            offest: new this.AMap.Pixel(-10, -10),
+            icon: lajizhanIcon,
+            title: '马尔康'
+          })
+        this.map.add(marker)
+      }
+      // for (let i = 0; i < lnglats.length; i++) {
+      //   const marker = new this.AMap.Marker({
+      //     // eslint-disable-next-line new-cap
+      //     position: new this.AMap.LngLat(lnglats[i][0], lnglats[i][1]),
+      //     offest: new this.AMap.Pixel(-10, -10),
+      //     icon: lajizhanIcon,
+      //     title: '马尔康'
+      //   })
+      // }
     }
   }
 }

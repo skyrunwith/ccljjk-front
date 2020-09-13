@@ -73,10 +73,11 @@
             <div data-v-79602b79="" class="title-img">
               &nbsp;
               待处理消息
+              <span data-v-79602b79="" class="words">Information</span>
             </div>
           </div>
           <div style="color: white">
-            待处理消息内容
+            <render-notify></render-notify>
           </div>
         </div>
         <div class="splite-cell">
@@ -84,7 +85,7 @@
           <div class="point"></div>
         </div>
       </div>
-      <div class="short-charts2">
+      <div class="short-charts3">
         <div class="splite-cell">
           <div class="point"></div>
           <div class="point"></div>
@@ -94,10 +95,11 @@
             <div data-v-79602b79="" class="title-img">
               &nbsp;
               餐厅收运概览
+              <span data-v-79602b79="" class="words">Overview</span>
             </div>
           </div>
-          <div style="color: white">
-            内容
+          <div style="color: white" class="warn-box">
+            <render-dining-statistics></render-dining-statistics>
           </div>
         </div>
         <div class="splite-cell">
@@ -105,7 +107,6 @@
           <div class="point"></div>
         </div>
       </div>
-      <div class="short-charts2"></div>
     </div>
     <div class="foot-charts-container charts-box">
       <div class="foot-charts">
@@ -114,13 +115,16 @@
           <div class="title-img-box">
             <div data-v-79602b79="" class="title-img">
               &nbsp;&nbsp;
-              30天内餐厨收运总量日统计
-              <span data-v-79602b79="" class="words">Statistics</span></div>
+              餐厨日收运趋势
+              <span data-v-79602b79="" class="words">Tendency</span></div>
           </div>
           <div id="qabox" class="qa-box" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;">
             <div style="position: relative; overflow: hidden; width: 760px; height: 211px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
-              <div style="width: 380px; height: 300px;">
-                <img src="../../images/statistics.png"/>
+              <!--<div style="width: 380px; height: 300px;">
+                <render-day-statistics></render-day-statistics>
+              </div>-->
+              <div style="width: 100%; height: 100%;">
+                <render-day-statistics></render-day-statistics>
               </div>
             </div>
           </div>
@@ -143,9 +147,16 @@ require('echarts/lib/chart/pie')
 require('echarts/lib/component/tooltip')
 require('echarts/lib/component/title')
 import RenderMap from '@/views/dashboard/render-map'
+import RenderDiningStatistics from '@/views/dashboard/render-diningStatistics'
+import RenderDayStatistics from '@/views/dashboard/render-dayStatistics'
+import RenderNotify from '@/views/dashboard/render-notify'
+
 export default {
   name: 'DataTotal',
-  components: {RenderMap},
+  components: {RenderMap
+	RenderDiningStatistics,
+    RenderDayStatistics,
+    RenderNotify},
   data(){
     return {
         nowTime:'',
@@ -824,9 +835,9 @@ export default {
   }
   .home-charts .foot-charts-container {
     width: 44vw;
-    height: 300px;
+    height: 322px;
     position: fixed;
-    bottom: 40px;
+    bottom: 30px;
     left: 29.4vw;
   }
   .home-charts .charts-box .charts-item, .home-charts .charts-box .foot-charts {
@@ -862,7 +873,8 @@ export default {
 
   .home-charts .charts-box .mini-charts, .home-charts .charts-box .short-charts2 {
     width: 95%;
-    margin: 10px 0;
+    height: 32%;
+    margin: 10px 0px 36px 0px;
     border-left: 2px solid #425762;
     border-right: 2px solid #425762;
     display: -webkit-box;
@@ -879,11 +891,44 @@ export default {
     -ms-flex-pack: justify;
     justify-content: space-between;
   }
+  .home-charts .charts-box .mini-charts, .home-charts .charts-box .short-charts3 {
+    width: 95%;
+    height: 64%;
+    margin: 10px 0px 36px 0px;
+    border-left: 2px solid #425762;
+    border-right: 2px solid #425762;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
   .home-charts .cesium {
     width: 44vw;
     left: 29.4vw;
     height: calc(100% - 420px);
     position: fixed;
     top: 60px;
+  }
+
+  .warn-box {
+    width: 100%;
+    height: calc(100% - 40px);
+    max-height: calc(100% - 40px);
+    position: relative;
+    padding: 0 10px;
+  }
+
+  .words {
+    color: #8c7f7f
   }
 </style>

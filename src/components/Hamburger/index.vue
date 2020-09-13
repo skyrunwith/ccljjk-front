@@ -5,6 +5,7 @@
       class="hamburger"
       viewBox="0 0 1024 1024"
       xmlns="http://www.w3.org/2000/svg"
+      fill="#fff"
       width="64"
       height="64"
     >
@@ -34,8 +35,8 @@ export default {
 .hamburger {
   display: inline-block;
   vertical-align: middle;
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
 }
 
 .hamburger.is-active {
