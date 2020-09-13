@@ -39,6 +39,7 @@
             <div data-v-79602b79="" class="title-img">
               &nbsp;
               待处理消息
+              <span data-v-79602b79="" class="words">Information</span>
             </div>
           </div>
           <div style="color: white">
@@ -50,7 +51,7 @@
           <div class="point"></div>
         </div>
       </div>
-      <div class="short-charts2">
+      <div class="short-charts3">
         <div class="splite-cell">
           <div class="point"></div>
           <div class="point"></div>
@@ -60,6 +61,7 @@
             <div data-v-79602b79="" class="title-img">
               &nbsp;
               餐厅收运概览
+              <span data-v-79602b79="" class="words">Overview</span>
             </div>
           </div>
           <div style="color: white" class="warn-box">
@@ -79,8 +81,8 @@
           <div class="title-img-box">
             <div data-v-79602b79="" class="title-img">
               &nbsp;&nbsp;
-              30天内餐厨收运总量日统计
-              <span data-v-79602b79="" class="words">Statistics</span></div>
+              餐厨日收运趋势
+              <span data-v-79602b79="" class="words">Tendency</span></div>
           </div>
           <div id="qabox" class="qa-box" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;">
             <div style="position: relative; overflow: hidden; width: 760px; height: 211px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
@@ -297,9 +299,9 @@ export default {
   }
   .home-charts .foot-charts-container {
     width: 44vw;
-    height: 300px;
+    height: 322px;
     position: fixed;
-    bottom: 40px;
+    bottom: 30px;
     left: 29.4vw;
   }
   .home-charts .charts-box .charts-item, .home-charts .charts-box .foot-charts {
@@ -335,7 +337,7 @@ export default {
 
   .home-charts .charts-box .mini-charts, .home-charts .charts-box .short-charts2 {
     width: 95%;
-    height: 48%;
+    height: 32%;
     margin: 10px 0px 36px 0px;
     border-left: 2px solid #425762;
     border-right: 2px solid #425762;
@@ -353,6 +355,27 @@ export default {
     -ms-flex-pack: justify;
     justify-content: space-between;
   }
+  .home-charts .charts-box .mini-charts, .home-charts .charts-box .short-charts3 {
+    width: 95%;
+    height: 64%;
+    margin: 10px 0px 36px 0px;
+    border-left: 2px solid #425762;
+    border-right: 2px solid #425762;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
   .home-charts .cesium {
     width: 44vw;
     left: 29.4vw;
@@ -367,5 +390,9 @@ export default {
     max-height: calc(100% - 40px);
     position: relative;
     padding: 0 10px;
+  }
+
+  .words {
+    color: #8c7f7f
   }
 </style>

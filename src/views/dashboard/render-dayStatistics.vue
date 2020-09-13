@@ -2,7 +2,8 @@
   <!--<div id="dayStatistics" style="height:100% ;width: 100%">
     <img src="../../images/statistics.png"/>
   </div>-->
-  <div id="myChart" style="height:100% ;width: 100%;padding-left: 33px;"></div>
+
+  <div id="myChart" style="height:260px ;width: 100%;padding-left: 33px;bottom: 23px;left: 4px;position: relative;"></div>
 </template>
 
 <script>
@@ -23,8 +24,10 @@
         let myChart = echarts.init(document.getElementById('myChart'));
         let option = {
           title: {
-            text: '',
-            subtext: ''
+            text: '', //标题
+            subtext: '',
+            left: 'center',
+            align: 'right'
           },
           tooltip: {
             trigger: 'axis'
@@ -42,8 +45,8 @@
           xAxis: [
             {
               type: 'category',
-              data: ["08/01","08/02","08/03","08/04","08/05","08/06","08/07","08/08","08/09","08/10","08/11","08/12",
-                "08/13","08/14","08/15","08/16","08/17","08/18","08/19","08/20","08/21","08/22"],
+              data: ["09/01","09/02","09/03","09/04","09/05","09/06","09/07","09/08","09/09","09/10","09/11","09/12",
+                "09/13","09/14","09/15","09/16","09/17","09/18","09/19","09/20","09/21","09/22"],
               axisLabel: {
                 color: "white", //刻度线标签颜色
                 interval: 0, //显示所有
@@ -53,10 +56,15 @@
           ],
           yAxis: [
             {
+              name: '收运量(千克/kg)',
               type: 'value',
               axisLabel: {
                 color: "white", //刻度线标签颜色
-                formatter: '{value}千克'
+                // formatter: '{value}千克'
+                formatter: '{value}'
+              },
+              nameTextStyle: {
+                color: 'white'
               }
             }
           ],
@@ -99,6 +107,7 @@
           ]
         };
         myChart.setOption(option);
+        // myChart.resize({height:300});
       },
       init() {
         // 请求接口，拿到数据并渲染
@@ -109,6 +118,10 @@
 </script>
 
 <style scoped>
-
+  .error-text-span {
+    position: absolute;
+    bottom: 13px;
+    left: 214px;
+  }
 </style>
 
