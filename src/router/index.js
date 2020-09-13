@@ -42,20 +42,18 @@ export const constantRoutes = [
     component: () => import('@/views/404'),
     hidden: true
   },
-  // {
-  //   path: '/',
-  //   component: Layout,
-  //   redirect: '/dataTotal',
-  //   hidden: true, // 不在侧边栏线上
-  //   children: [
-  //     {
-  //       path: 'dashboard',
-  //       component: () => import('@/views/dashboard/index'),
-  //       name: 'dashboard',
-  //       meta: { title: '监控一张图', icon: 'dashboard', affix: true }
-  //     }
-  //   ]
-  // },
+  {
+    path: '/dashboard',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/dashboard/index'),
+        name: 'dashboard',
+        meta: { title: '监控一张图', icon: 'dashboard', affix: true }
+      }
+    ]
+  },
   {
     path: '/',
     component: Layout,

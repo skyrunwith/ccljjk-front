@@ -1,9 +1,10 @@
 <template>
   <div class="navbar">
+    <div class="dash-header">大气环境标准站在线监测平台</div>
     <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
 
-    <breadcrumb class="breadcrumb-container" />
-
+<!--    <breadcrumb class="breadcrumb-container" />-->
+    <div class="current-time">2020-09-13 22:15:32  星期日</div>
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
@@ -13,17 +14,11 @@
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
           <router-link to="/">
             <el-dropdown-item>
-              Home
+              修改密码
             </el-dropdown-item>
           </router-link>
-          <a target="_blank" href="https://github.com/PanJiaChen/vue-admin-template/">
-            <el-dropdown-item>Github</el-dropdown-item>
-          </a>
-          <a target="_blank" href="https://panjiachen.github.io/vue-element-admin-site/#/">
-            <el-dropdown-item>Docs</el-dropdown-item>
-          </a>
           <el-dropdown-item divided @click.native="logout">
-            <span style="display:block;">Log Out</span>
+            <span style="display:block;">退出登录</span>
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -61,11 +56,12 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-  height: 50px;
+  height: 62px;
   overflow: hidden;
   position: relative;
-  background: #fff;
+  background: #051435;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
+  color: #fff;
 
   .hamburger-container {
     line-height: 46px;
@@ -135,5 +131,33 @@ export default {
       }
     }
   }
+}
+.navbar .current-time, .navbar .weather-label{
+  height: 40px;
+  line-height: 40px;
+  position: fixed;
+  top: 8px;
+  color: #fff;
+  font-size: 15px;
+  font-family: CUSTOM;
+}
+.navbar .current-time {
+  width: 220px;
+  right: 200px;
+}
+.navbar .dash-header {
+  width: 460px;
+  height: 62px;
+  line-height: 55px;
+  font-size: 2rem;
+  font-weight: 700;
+  position: fixed;
+  top: 0;
+  left: calc((100vw - 460px)/2);
+  z-index: 999;
+  cursor: pointer;
+  background: url(../../images/temp-header.png) no-repeat;
+  background-size: 100%;
+  text-align: center;
 }
 </style>
