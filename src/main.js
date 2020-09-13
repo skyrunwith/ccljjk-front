@@ -15,7 +15,12 @@ import router from './router'
 
 import '@/icons' // icon
 import '@/permission' // permission control
-
+// 引入echarts
+import echarts from 'echarts'
+import qs from 'qs'
+import axios from 'axios'
+Vue.prototype.$axios = axios    //全局注册，使用方法为:this.$axios
+Vue.prototype.qs = qs           //全局注册，使用方法为:this.qs
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
@@ -28,6 +33,8 @@ if (process.env.NODE_ENV === 'production') {
   const { mockXHR } = require('../mock')
   mockXHR()
 }
+
+Vue.prototype.$echarts = echarts
 
 // set ElementUI lang to EN
 Vue.use(ElementUI, { locale })
