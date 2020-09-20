@@ -21,6 +21,9 @@ import qs from 'qs'
 import axios from 'axios'
 Vue.prototype.$axios = axios    //全局注册，使用方法为:this.$axios
 Vue.prototype.qs = qs           //全局注册，使用方法为:this.qs
+
+
+// import './utils/flexible'
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
